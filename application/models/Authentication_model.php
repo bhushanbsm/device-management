@@ -21,4 +21,17 @@ class Authentication_model extends CI_Model {
 		return $this->db->get_where('users',$data)->row_array();
 	}
 
+	public function get_roles()
+	{
+		return $this->db->where('role_id >',$this->session->account)->get('roles')->result_array();
+	}
+
+	public function write_user($data='')
+	{
+		if($this->db->insert('users',$data)){
+			return $this->db->insert_id();
+		}
+		return 0;
+	}
+
 }
