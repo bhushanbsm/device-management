@@ -1,7 +1,7 @@
    </div>
    <hr>
    <footer>
-    <p>&copy; Vincent Gabriel 2013</p>
+    <p>&copy; Bhushan Manusmare 2018</p>
 </footer>
 </div>
 <span id="base_url" class="hidden"><?=base_url()?></span>
