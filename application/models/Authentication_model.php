@@ -10,7 +10,7 @@ class Authentication_model extends CI_Model {
 	
 	public function login_check($data='')
 	{
-		if($this->db->get_where('users',$data)->num_rows() > 0) {
+		if($this->db->get_where('users',$data)->num_rows()) {
 			return true;
 		}
 		return false;
@@ -32,6 +32,12 @@ class Authentication_model extends CI_Model {
 			return $this->db->insert_id();
 		}
 		return 0;
+	}
+
+	public function update_user($data='',$uid='')
+	{
+		$this->db->where('uid',$uid);
+		return $this->db->update('users',$data);
 	}
 
 }

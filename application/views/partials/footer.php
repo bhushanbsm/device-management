@@ -1,5 +1,5 @@
    <hr>
-   <footer>
+   <footer class="text-center">
    	<p>&copy; Bhushan Manusmare 2018</p>
    </footer>
 
@@ -9,6 +9,7 @@
    <script src="<?=base_url()?>assets/admin-theme/bootstrap/js/bootstrap.min.js"></script>
    <script src="<?=base_url()?>assets/admin-theme/vendors/easypiechart/jquery.easy-pie-chart.js"></script>
    <script src="<?=base_url()?>assets/admin-theme/assets/scripts.js"></script>
+   <script src="<?=base_url()?>assets/js/auth.js"></script>
    <script>
    	$(function() {
             // Easy pie charts
