@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+    As Name implies this hook will accept cookie form client and login the user by setting session
+*/
 function cookie_login() {
     $CI = & get_instance();
     if (!user_logged_in() && $CI->input->cookie('user')) {
