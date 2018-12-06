@@ -14,7 +14,7 @@
     <input type="password" name="password" class="input-block-level" placeholder="Password" required maxlength='32' minlength="8">
     <input type="password" name="conf_password" class="input-block-level" placeholder="Conf Password" required maxlength="32" minlength="8">
     <?=form_dropdown('account', $account,'', 'id="select01" class="chzn-select"')?>
-    <input type="text" name="phone" class="input-block-level" placeholder="Phone">
+    <input type="text" name="phone" class="input-block-level phone" placeholder="Phone">
     <button id="submit" class="btn btn-large btn-primary" type="submit">Sign Up</button>
   </form>
 
@@ -23,5 +23,8 @@
 <style>
 select {
   width: 100%;
+}
+.phone{
+  margin-top: 10px;
 }
 </style>

@@ -9,9 +9,19 @@ class Authentication extends CI_Controller {
 		$this->load->model('Authentication_model');
 	}
 
+	public function logout($value='')
+	{
+		$this->session->sess_destroy();
+		delete_cookie('user');
+		redirect('login','refresh');
+	}
+
 	public function forgotpassword()
 	{
-		$this->load->view('authentication/forgotpassword');
+		if (user_logged_in()) {
+			$data['user'] = $this->Authentication_model->read_user(['uid'=>$this->session->uid]);
+		}
+		$this->load->view('authentication/forgotpassword',$data);
 	}
 
 	/**
@@ -179,6 +189,7 @@ class Authentication extends CI_Controller {
 			foreach ($temp as $key => $value) {
 				$data['account'] += [$value['role_id'] => $value['role']];
 			}
+			$data['user'] = $this->Authentication_model->read_user(['uid'=>$this->session->uid]);
 			$this->load->view('authentication/register', $data);
 		}
 
